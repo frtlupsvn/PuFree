@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1DC65818EA926C00A43459 /* it_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DC65718EA926C00A43459 /* it_logo.png */; };
+		0C1DC66518EAB9A900A43459 /* eco_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DC66418EAB9A900A43459 /* eco_logo.png */; };
+		0C1DC66918EABC0100A43459 /* DayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DC66818EABC0100A43459 /* DayView.m */; };
+		0C1DC66D18EABC7C00A43459 /* MonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DC66C18EABC7C00A43459 /* MonthViewController.m */; };
 		0C5EE65818E5D56900E2D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65718E5D56900E2D7AE /* Foundation.framework */; };
 		0C5EE65A18E5D56900E2D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65918E5D56900E2D7AE /* CoreGraphics.framework */; };
 		0C5EE65C18E5D56900E2D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65B18E5D56900E2D7AE /* UIKit.framework */; };
@@ -19,6 +23,9 @@
 		0C5EE67318E5D56900E2D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65B18E5D56900E2D7AE /* UIKit.framework */; };
 		0C5EE67B18E5D56900E2D7AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EE67918E5D56900E2D7AE /* InfoPlist.strings */; };
 		0C5EE67D18E5D56900E2D7AE /* PuFreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE67C18E5D56900E2D7AE /* PuFreeTests.m */; };
+		0C5EE68F18E5D71400E2D7AE /* CoreGUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */; };
+		0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */; };
+		0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1DC65718EA926C00A43459 /* it_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = it_logo.png; sourceTree = "<group>"; };
+		0C1DC66418EAB9A900A43459 /* eco_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eco_logo.png; sourceTree = "<group>"; };
+		0C1DC66718EABC0100A43459 /* DayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayView.h; sourceTree = "<group>"; };
+		0C1DC66818EABC0100A43459 /* DayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayView.m; sourceTree = "<group>"; };
+		0C1DC66B18EABC7C00A43459 /* MonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthViewController.h; sourceTree = "<group>"; };
+		0C1DC66C18EABC7C00A43459 /* MonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthViewController.m; sourceTree = "<group>"; };
 		0C5EE65418E5D56900E2D7AE /* PuFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C5EE65718E5D56900E2D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0C5EE65918E5D56900E2D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +61,12 @@
 		0C5EE67818E5D56900E2D7AE /* PuFreeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PuFreeTests-Info.plist"; sourceTree = "<group>"; };
 		0C5EE67A18E5D56900E2D7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C5EE67C18E5D56900E2D7AE /* PuFreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuFreeTests.m; sourceTree = "<group>"; };
+		0C5EE68D18E5D71400E2D7AE /* CoreGUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGUIController.h; sourceTree = "<group>"; };
+		0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGUIController.m; sourceTree = "<group>"; };
+		0C5EE69018E5DC7A00E2D7AE /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		0C9B2B7918E6AE81007227D1 /* ListClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListClassViewController.h; sourceTree = "<group>"; };
+		0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListClassViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +93,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1DC65918EA928800A43459 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				0C5EE69018E5DC7A00E2D7AE /* IntroViewController.h */,
+				0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
+		0C1DC65A18EA929400A43459 /* List Class */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B2B7918E6AE81007227D1 /* ListClassViewController.h */,
+				0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */,
+			);
+			name = "List Class";
+			sourceTree = "<group>";
+		};
+		0C1DC66618EABBCD00A43459 /* DayView */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DC66718EABC0100A43459 /* DayView.h */,
+				0C1DC66818EABC0100A43459 /* DayView.m */,
+			);
+			name = DayView;
+			sourceTree = "<group>";
+		};
+		0C1DC66A18EABC6000A43459 /* Month View */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DC66B18EABC7C00A43459 /* MonthViewController.h */,
+				0C1DC66C18EABC7C00A43459 /* MonthViewController.m */,
+			);
+			name = "Month View";
+			sourceTree = "<group>";
+		};
 		0C5EE64B18E5D56900E2D7AE = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +162,12 @@
 		0C5EE65D18E5D56900E2D7AE /* PuFree */ = {
 			isa = PBXGroup;
 			children = (
-				0C5EE66618E5D56900E2D7AE /* AppDelegate.h */,
-				0C5EE66718E5D56900E2D7AE /* AppDelegate.m */,
+				0C9B2B7618E6AAED007227D1 /* Ressource */,
+				0C5EE68C18E5D6D200E2D7AE /* Images */,
+				0C5EE68B18E5D6C700E2D7AE /* Model */,
+				0C5EE68A18E5D6AD00E2D7AE /* View */,
+				0C5EE68918E5D69500E2D7AE /* GUIController */,
+				0C5EE68818E5D67300E2D7AE /* AppDelegate */,
 				0C5EE66918E5D56900E2D7AE /* Images.xcassets */,
 				0C5EE65E18E5D56900E2D7AE /* Supporting Files */,
 			);
@@ -142,6 +201,58 @@
 				0C5EE67918E5D56900E2D7AE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C5EE68818E5D67300E2D7AE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0C5EE66618E5D56900E2D7AE /* AppDelegate.h */,
+				0C5EE66718E5D56900E2D7AE /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0C5EE68918E5D69500E2D7AE /* GUIController */ = {
+			isa = PBXGroup;
+			children = (
+				0C5EE68D18E5D71400E2D7AE /* CoreGUIController.h */,
+				0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */,
+			);
+			name = GUIController;
+			sourceTree = "<group>";
+		};
+		0C5EE68A18E5D6AD00E2D7AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DC66A18EABC6000A43459 /* Month View */,
+				0C1DC66618EABBCD00A43459 /* DayView */,
+				0C1DC65A18EA929400A43459 /* List Class */,
+				0C1DC65918EA928800A43459 /* Intro */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0C5EE68B18E5D6C700E2D7AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0C5EE68C18E5D6D200E2D7AE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DC66418EAB9A900A43459 /* eco_logo.png */,
+				0C1DC65718EA926C00A43459 /* it_logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		0C9B2B7618E6AAED007227D1 /* Ressource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Ressource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C5EE66218E5D56900E2D7AE /* InfoPlist.strings in Resources */,
+				0C1DC65818EA926C00A43459 /* it_logo.png in Resources */,
+				0C1DC66518EAB9A900A43459 /* eco_logo.png in Resources */,
 				0C5EE66A18E5D56900E2D7AE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C5EE66818E5D56900E2D7AE /* AppDelegate.m in Sources */,
+				0C5EE68F18E5D71400E2D7AE /* CoreGUIController.m in Sources */,
+				0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */,
 				0C5EE66418E5D56900E2D7AE /* main.m in Sources */,
+				0C1DC66D18EABC7C00A43459 /* MonthViewController.m in Sources */,
+				0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */,
+				0C1DC66918EABC0100A43459 /* DayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +478,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuFree/PuFree-Prefix.pch";
 				INFOPLIST_FILE = "PuFree/PuFree-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,7 +493,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PuFree/PuFree-Prefix.pch";
 				INFOPLIST_FILE = "PuFree/PuFree-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -437,6 +559,7 @@
 				0C5EE68218E5D56900E2D7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C5EE68318E5D56900E2D7AE /* Build configuration list for PBXNativeTarget "PuFreeTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +568,7 @@
 				0C5EE68518E5D56900E2D7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

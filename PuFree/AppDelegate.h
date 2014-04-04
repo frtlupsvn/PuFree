@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "CoreGUIController.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    CoreGUIController * coreGUI;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
