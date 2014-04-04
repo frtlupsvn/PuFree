@@ -38,7 +38,7 @@
     monthPicked = _month;
     yearPicked = _year;
     NSLog([NSString stringWithFormat:@"Class : %@ , month :%d , year :%d",codeClass,monthPicked,yearPicked]);
-    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass];
+    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass month:monthPicked year:yearPicked];
     [navigation pushViewController:monthView animated:YES];
 }
 @end

@@ -13,6 +13,9 @@
     UIPickerView * pickerView;
     NSArray * arrayMonth;
     NSArray * arrayYear;
+    NSDate * today;
+    int _monthCurrent;
+    int _yearCurrent;
     int _monthPicked;
     int _yearPicked;
 }

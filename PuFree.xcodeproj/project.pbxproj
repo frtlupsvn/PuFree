@@ -165,7 +165,6 @@
 		0C5EE65D18E5D56900E2D7AE /* PuFree */ = {
 			isa = PBXGroup;
 			children = (
-				0C9B2B7618E6AAED007227D1 /* Ressource */,
 				0C5EE68C18E5D6D200E2D7AE /* Images */,
 				0C5EE68B18E5D6C700E2D7AE /* Model */,
 				0C5EE68A18E5D6AD00E2D7AE /* View */,
@@ -250,13 +249,6 @@
 				0C1DC65718EA926C00A43459 /* it_logo.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		0C9B2B7618E6AAED007227D1 /* Ressource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Ressource;
 			sourceTree = "<group>";
 		};
 		E63BA57818EE887800767A2A /* Pick Date View */ = {

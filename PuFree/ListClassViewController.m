@@ -83,7 +83,7 @@
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *contentRow = cell.textLabel.text;
-    NSInteger numeroRow = indexPath.row;
+    //NSInteger numeroRow = indexPath.row;
     [coreGUI PickClass:contentRow];
 }
 

@@ -11,5 +11,5 @@
 @interface DayView : UIView {
     UILabel *dayOfWeek;
 }
--(id)initWithDayInfo:(int)_day dayOfWeek:(NSString*)_dayOfWeek;
+-(id)initWithDayInfo:(int)_day dayOfWeek:(NSString*)_dayOfWeek sunday:(BOOL)_sunday;
 @end

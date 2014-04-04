@@ -26,21 +26,40 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height/5, self.view.frame.size.width, self.view.frame.size.height)];
     arrayMonth = [[NSArray alloc]initWithObjects:@"Month",@"January",@"February",@"March",@"April",@"May"
                   ,@"June",@"July",@"Auguest",@"September",@"October",@"November",@"December",  nil];
     arrayYear = [[NSArray alloc]initWithObjects:@"Year",@"2013",@"2014", nil];
     pickerView.delegate = self;
     [self.view addSubview:pickerView];
-    //[self PickerViewJumpToRow];
+    UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
+    self.navigationItem.rightBarButtonItem = TodayButton;
+    [self getToday];
     // Add Button go to Calendar
     UIButton * showMonthView = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    showMonthView.frame = CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, 50);
+    showMonthView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 50);
     [showMonthView setTitle:@"Show A Timme Table" forState:UIControlStateNormal];
     [self.view addSubview:showMonthView];
     [showMonthView addTarget:self action:@selector(ShowMonthViewButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
 }
+-(void)getToday{
+    //get Date now
+    today = [NSDate date];
+    //NSLog(@"now: %@",today);
+    
+    NSString * stringDate = [[NSString alloc]initWithFormat:@"%@",today];
+    NSArray * arr1 = [stringDate componentsSeparatedByString:@" "];
+    NSString * str = [arr1 objectAtIndex:0];
+    //NSLog(@"String Date : %@",str);
+    
+    NSArray * arr2 = [str componentsSeparatedByString:@"-"];
+    _monthCurrent = [[arr2 objectAtIndex:1]intValue];
+    _yearCurrent = [[arr2 objectAtIndex:0] intValue];
+    
+    //NSLog(@"Day: %d , Month : %d , Year : %d",_dayCurrent,_monthCurrent,_yearCurrent);
+}
+
 -(void)ShowMonthViewButtonPressed:(id)sender
 {
     if (_monthPicked == 0 || _yearPicked == 0)
@@ -55,10 +74,19 @@
         [coreGUI DatePicked:_monthPicked year:_yearPicked];
     }
 }
--(void)PickerViewJumpToRow
+-(void)PickerViewJumpToRow:(id)sender
 {
     [pickerView reloadAllComponents];
-    [pickerView selectRow:0 inComponent:0 animated:YES];
+    [pickerView selectRow:_monthCurrent inComponent:0 animated:YES];
+    _monthPicked = _monthCurrent;
+    _yearPicked = _yearCurrent;
+    if (_yearCurrent == 2013)
+        [pickerView selectRow:1 inComponent:1 animated:YES];
+    else
+        [pickerView selectRow:2 inComponent:1 animated:YES];
+    
+    
+    NSLog(@"%d %d",_monthPicked,_yearPicked);
 }
 //Picker Delegate
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

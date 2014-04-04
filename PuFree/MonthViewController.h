@@ -17,16 +17,21 @@
     UIScrollView * scrollview;
     int y_scrollview_jump;
 
-    DayView *day;
+    DayView *dayView;
     
     int width;
     int height;
     
     NSDate *today;
-    int _day;
-    int _month;
-    int _year;
-    int *monthlength;
+    int _dayCurrent;
+    int _monthCurrent;
+    int _yearCurrent;
+    int *_monthlengthCurrent;
+    
+    NSDate *dayPicked;
+    int _monthPicked;
+    int _yearPicked;
+    int *_monthlengthPicked;
 }
--(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString*)_codeClass;
+-(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString*)_codeClass month:(int)_month year:(int)_year;
 @end
