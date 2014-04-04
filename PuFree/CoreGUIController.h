@@ -19,9 +19,12 @@
     PickDateViewController *pickDateView;
     UINavigationController *navigation;
     NSString* codeClass;
+    int  monthPicked;
+    int  yearPicked;
 }
 -(id)initCoreGUIController:(UIWindow*)_window;
 -(void)StartProgram;
 -(void)ShowListClass;
 -(void)PickClass:(NSString*)_codeClass;
+-(void)DatePicked:(int)_month year:(int)_year;
 @end

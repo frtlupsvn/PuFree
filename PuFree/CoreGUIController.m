@@ -33,4 +33,12 @@
     pickDateView = [[PickDateViewController alloc]initWithCoreGUI:self];
     [navigation pushViewController:pickDateView animated:YES];
 }
+-(void)DatePicked:(int)_month year:(int)_year
+{
+    monthPicked = _month;
+    yearPicked = _year;
+    NSLog([NSString stringWithFormat:@"Class : %@ , month :%d , year :%d",codeClass,monthPicked,yearPicked]);
+    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass];
+    [navigation pushViewController:monthView animated:YES];
+}
 @end

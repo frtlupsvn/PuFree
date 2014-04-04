@@ -13,6 +13,8 @@
     UIPickerView * pickerView;
     NSArray * arrayMonth;
     NSArray * arrayYear;
+    int _monthPicked;
+    int _yearPicked;
 }
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI;
 @end
