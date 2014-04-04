@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DayView.h"
+#import "MyDayInfo.h"
 @class CoreGUIController;
 @interface MonthViewController : UIViewController
 {
@@ -32,6 +33,11 @@
     int _monthPicked;
     int _yearPicked;
     int *_monthlengthPicked;
+    
+    NSMutableArray *arrayDayInfo;
+    NSMutableArray *arrayDays;
+    NSMutableArray *arrayDate;
+
 }
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString*)_codeClass month:(int)_month year:(int)_year;
 @end

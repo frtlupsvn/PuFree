@@ -45,6 +45,7 @@
     //
     [self getPickedDay];
     [self daysOfMonth:dayPicked];
+    [self loadData];
     [self loadDayView];
     //self.title = [NSString stringWithFormat:@"%d-%d %@",_monthCurrent,_yearCurrent,codeClass];
     //NSLog([NSString stringWithFormat:@"Days length: %d",monthlength]);
@@ -127,8 +128,58 @@
     //NSLog(@"Time Picked: %@",dayPicked);
     
 }
+-(void)loadData
+{
+    arrayDayInfo = [[NSMutableArray alloc]init];
+    arrayDate   = [[NSMutableArray alloc]init];
+    MyDayInfo *dayInfo = [[MyDayInfo alloc]init];
+    dayInfo.RealCourseName = @"Toan";
+    dayInfo.TeacherName = @"Thanh";
+    dayInfo.RoomName =  @"515";
+    dayInfo.Morning = TRUE;
+    dayInfo.Noday = 5;
+    dayInfo.TotalDays = 10;
+    dayInfo.dateInfo = 5;
+    [arrayDayInfo addObject:dayInfo];
+    [arrayDate addObject:@(dayInfo.dateInfo)];
+    
+    dayInfo = [[MyDayInfo alloc]init];
+    dayInfo.RealCourseName = @"VAN";
+    dayInfo.TeacherName = @"NGA";
+    dayInfo.RoomName =  @"512";
+    dayInfo.Morning = FALSE;
+    dayInfo.Noday = 1;
+    dayInfo.TotalDays = 1;
+    dayInfo.dateInfo = 8;
+    [arrayDayInfo addObject:dayInfo];
+    [arrayDate addObject:@(dayInfo.dateInfo)];
+    
+    dayInfo = [[MyDayInfo alloc]init];
+    dayInfo.RealCourseName = @"SU";
+    dayInfo.TeacherName = @"NAM";
+    dayInfo.RoomName =  @"100";
+    dayInfo.Morning = FALSE;
+    dayInfo.Noday = 2;
+    dayInfo.TotalDays = 8;
+    dayInfo.dateInfo = 12;
+    [arrayDayInfo addObject:dayInfo];
+    [arrayDate addObject:@(dayInfo.dateInfo)];
+    
+    dayInfo = [[MyDayInfo alloc]init];
+    dayInfo.RealCourseName = @"SINH";
+    dayInfo.TeacherName = @"LAN";
+    dayInfo.RoomName =  @"91";
+    dayInfo.Morning = TRUE;
+    dayInfo.Noday = 3;
+    dayInfo.TotalDays = 7;
+    dayInfo.dateInfo = 30;
+    [arrayDayInfo addObject:dayInfo];
+    [arrayDate addObject:@(dayInfo.dateInfo)];
+    
+}
 -(void)loadDayView{
     CGPoint  startpoint = CGPointMake(0, 0);
+    arrayDays = [[NSMutableArray alloc]init];
     for (int i =1;i<=_monthlengthPicked;i++)
     {
         dayView = [[DayView alloc]initWithDayInfo:i dayOfWeek:[self dayOfWeek:i month:_monthCurrent year:_yearCurrent] sunday:[[self dayOfWeek:i month:_monthCurrent year:_yearCurrent] isEqualToString:@"Sunday"]];
@@ -142,10 +193,17 @@
         {
         startpoint.y+=dayView.frame.size.height+0.5;
         }
+        for (int z=0;z<[arrayDate count];z++)
+        {
+            if ( i == [[arrayDate objectAtIndex:z] intValue])
+            {
+                [dayView loadDayInfo:[arrayDayInfo objectAtIndex:z]];
+            }
+        }
     }
     scrollview.contentSize = CGSizeMake(self.view.frame.size.width, startpoint.y);
-
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     scrollview.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }

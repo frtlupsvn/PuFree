@@ -26,6 +26,7 @@
 		0C5EE68F18E5D71400E2D7AE /* CoreGUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */; };
 		0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */; };
 		0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */; };
+		0C9F3F6218EF2B0600D01937 /* MyDayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */; };
 		E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63BA57A18EE88D800767A2A /* PickDateViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		0C9B2B7918E6AE81007227D1 /* ListClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListClassViewController.h; sourceTree = "<group>"; };
 		0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListClassViewController.m; sourceTree = "<group>"; };
+		0C9F3F6018EF2B0600D01937 /* MyDayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDayInfo.h; sourceTree = "<group>"; };
+		0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDayInfo.m; sourceTree = "<group>"; };
 		E63BA57918EE88D800767A2A /* PickDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickDateViewController.h; sourceTree = "<group>"; };
 		E63BA57A18EE88D800767A2A /* PickDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickDateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +241,8 @@
 		0C5EE68B18E5D6C700E2D7AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C9F3F6018EF2B0600D01937 /* MyDayInfo.h */,
+				0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */,
 				0C5EE66418E5D56900E2D7AE /* main.m in Sources */,
 				0C1DC66D18EABC7C00A43459 /* MonthViewController.m in Sources */,
+				0C9F3F6218EF2B0600D01937 /* MyDayInfo.m in Sources */,
 				0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */,
 				0C1DC66918EABC0100A43459 /* DayView.m in Sources */,
 				E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */,
