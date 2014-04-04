@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67BBD273-3801-4C49-A3AC-BA387AF38159</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PuFree</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>061FF0CA-95C7-41C5-BF57-46DC167B2376</key>
+		<string>https://github.com/frtlupsvn/PuFree.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PuFree.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>061FF0CA-95C7-41C5-BF57-46DC167B2376</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/frtlupsvn/PuFree.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>061FF0CA-95C7-41C5-BF57-46DC167B2376</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>061FF0CA-95C7-41C5-BF57-46DC167B2376</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PuFree</string>
+		</dict>
+	</array>
+</dict>
+</plist>

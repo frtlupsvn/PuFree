@@ -10,11 +10,13 @@
 #import "IntroViewController.h"
 #import "ListClassViewController.h"
 #import "MonthViewController.h"
+#import "PickDateViewController.h"
 @interface CoreGUIController : NSObject{
     UIWindow *window;
     IntroViewController *introView;
     ListClassViewController *listClass;
     MonthViewController *monthView;
+    PickDateViewController *pickDateView;
     UINavigationController *navigation;
     NSString* codeClass;
 }

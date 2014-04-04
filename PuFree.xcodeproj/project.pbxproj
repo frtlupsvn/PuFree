@@ -26,6 +26,7 @@
 		0C5EE68F18E5D71400E2D7AE /* CoreGUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */; };
 		0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */; };
 		0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */; };
+		E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63BA57A18EE88D800767A2A /* PickDateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		0C9B2B7918E6AE81007227D1 /* ListClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListClassViewController.h; sourceTree = "<group>"; };
 		0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListClassViewController.m; sourceTree = "<group>"; };
+		E63BA57918EE88D800767A2A /* PickDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickDateViewController.h; sourceTree = "<group>"; };
+		E63BA57A18EE88D800767A2A /* PickDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickDateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,7 @@
 		0C5EE68A18E5D6AD00E2D7AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E63BA57818EE887800767A2A /* Pick Date View */,
 				0C1DC66A18EABC6000A43459 /* Month View */,
 				0C1DC66618EABBCD00A43459 /* DayView */,
 				0C1DC65A18EA929400A43459 /* List Class */,
@@ -253,6 +257,15 @@
 			children = (
 			);
 			name = Ressource;
+			sourceTree = "<group>";
+		};
+		E63BA57818EE887800767A2A /* Pick Date View */ = {
+			isa = PBXGroup;
+			children = (
+				E63BA57918EE88D800767A2A /* PickDateViewController.h */,
+				E63BA57A18EE88D800767A2A /* PickDateViewController.m */,
+			);
+			name = "Pick Date View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +372,7 @@
 				0C1DC66D18EABC7C00A43459 /* MonthViewController.m in Sources */,
 				0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */,
 				0C1DC66918EABC0100A43459 /* DayView.m in Sources */,
+				E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

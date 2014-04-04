@@ -29,7 +29,8 @@
     codeClass=_codeClass;
     NSLog(codeClass);
     //
-    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass];
-    [navigation pushViewController:monthView animated:YES];
+    //monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass];
+    pickDateView = [[PickDateViewController alloc]initWithCoreGUI:self];
+    [navigation pushViewController:pickDateView animated:YES];
 }
 @end
