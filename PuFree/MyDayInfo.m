@@ -9,5 +9,7 @@
 #import "MyDayInfo.h"
 
 @implementation MyDayInfo
+
 @synthesize RealCourseName,TeacherName,RoomName,Morning,Noday,TotalDays,dateInfo;
+
 @end

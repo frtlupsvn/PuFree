@@ -10,7 +10,7 @@
 #import "DayView.h"
 #import "MyDayInfo.h"
 @class CoreGUIController;
-@interface MonthViewController : UIViewController
+@interface MonthViewController : UIViewController <NSURLConnectionDelegate>
 {
     CoreGUIController *coreGUI;
     NSString * codeClass;
@@ -37,6 +37,7 @@
     NSMutableArray *arrayDayInfo;
     NSMutableArray *arrayDays;
     NSMutableArray *arrayDate;
+    
 
 }
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString*)_codeClass month:(int)_month year:(int)_year;

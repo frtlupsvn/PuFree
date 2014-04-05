@@ -17,9 +17,7 @@
     int Noday;
     int TotalDays;
     int dateInfo;
-    
 }
-
 @property (nonatomic,retain) NSString * RealCourseName;
 @property (nonatomic,retain) NSString * TeacherName;
 @property (nonatomic,retain) NSString * RoomName;

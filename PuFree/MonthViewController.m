@@ -128,55 +128,97 @@
     //NSLog(@"Time Picked: %@",dayPicked);
     
 }
+
 -(void)loadData
 {
+//    arrayDayInfo = [[NSMutableArray alloc]init];
+//    arrayDate   = [[NSMutableArray alloc]init];
+//    MyDayInfo *dayInfo = [[MyDayInfo alloc]init];
+//    dayInfo.RealCourseName = @"Toan";
+//    dayInfo.TeacherName = @"Thanh";
+//    dayInfo.RoomName =  @"515";
+//    dayInfo.Morning = TRUE;
+//    dayInfo.Noday = 5;
+//    dayInfo.TotalDays = 10;
+//    dayInfo.dateInfo = 5;
+//    [arrayDayInfo addObject:dayInfo];
+//    [arrayDate addObject:@(dayInfo.dateInfo)];
+//    
+//    dayInfo = [[MyDayInfo alloc]init];
+//    dayInfo.RealCourseName = @"VAN";
+//    dayInfo.TeacherName = @"NGA";
+//    dayInfo.RoomName =  @"512";
+//    dayInfo.Morning = FALSE;
+//    dayInfo.Noday = 1;
+//    dayInfo.TotalDays = 1;
+//    dayInfo.dateInfo = 8;
+//    [arrayDayInfo addObject:dayInfo];
+//    [arrayDate addObject:@(dayInfo.dateInfo)];
+//    
+//    dayInfo = [[MyDayInfo alloc]init];
+//    dayInfo.RealCourseName = @"SU";
+//    dayInfo.TeacherName = @"NAM";
+//    dayInfo.RoomName =  @"100";
+//    dayInfo.Morning = FALSE;
+//    dayInfo.Noday = 2;
+//    dayInfo.TotalDays = 8;
+//    dayInfo.dateInfo = 12;
+//    [arrayDayInfo addObject:dayInfo];
+//    [arrayDate addObject:@(dayInfo.dateInfo)];
+//    
+//    dayInfo = [[MyDayInfo alloc]init];
+//    dayInfo.RealCourseName = @"SINH";
+//    dayInfo.TeacherName = @"LAN";
+//    dayInfo.RoomName =  @"91";
+//    dayInfo.Morning = TRUE;
+//    dayInfo.Noday = 3;
+//    dayInfo.TotalDays = 7;
+//    dayInfo.dateInfo = 30;
+//    [arrayDayInfo addObject:dayInfo];
+//    [arrayDate addObject:@(dayInfo.dateInfo)];
+    
     arrayDayInfo = [[NSMutableArray alloc]init];
-    arrayDate   = [[NSMutableArray alloc]init];
-    MyDayInfo *dayInfo = [[MyDayInfo alloc]init];
-    dayInfo.RealCourseName = @"Toan";
-    dayInfo.TeacherName = @"Thanh";
-    dayInfo.RoomName =  @"515";
-    dayInfo.Morning = TRUE;
-    dayInfo.Noday = 5;
-    dayInfo.TotalDays = 10;
-    dayInfo.dateInfo = 5;
-    [arrayDayInfo addObject:dayInfo];
-    [arrayDate addObject:@(dayInfo.dateInfo)];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
+                              [NSURL URLWithString:@"http://binhchonmytam.com/timetable/month.php?month=2&year=2013&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f"]];
     
-    dayInfo = [[MyDayInfo alloc]init];
-    dayInfo.RealCourseName = @"VAN";
-    dayInfo.TeacherName = @"NGA";
-    dayInfo.RoomName =  @"512";
-    dayInfo.Morning = FALSE;
-    dayInfo.Noday = 1;
-    dayInfo.TotalDays = 1;
-    dayInfo.dateInfo = 8;
-    [arrayDayInfo addObject:dayInfo];
-    [arrayDate addObject:@(dayInfo.dateInfo)];
     
-    dayInfo = [[MyDayInfo alloc]init];
-    dayInfo.RealCourseName = @"SU";
-    dayInfo.TeacherName = @"NAM";
-    dayInfo.RoomName =  @"100";
-    dayInfo.Morning = FALSE;
-    dayInfo.Noday = 2;
-    dayInfo.TotalDays = 8;
-    dayInfo.dateInfo = 12;
-    [arrayDayInfo addObject:dayInfo];
-    [arrayDate addObject:@(dayInfo.dateInfo)];
-    
-    dayInfo = [[MyDayInfo alloc]init];
-    dayInfo.RealCourseName = @"SINH";
-    dayInfo.TeacherName = @"LAN";
-    dayInfo.RoomName =  @"91";
-    dayInfo.Morning = TRUE;
-    dayInfo.Noday = 3;
-    dayInfo.TotalDays = 7;
-    dayInfo.dateInfo = 30;
-    [arrayDayInfo addObject:dayInfo];
-    [arrayDate addObject:@(dayInfo.dateInfo)];
-    
+    NSError *error;
+    NSMutableDictionary *jsonDataDict = [NSJSONSerialization
+                                       JSONObjectWithData:jsonData
+                                       options:NSJSONReadingMutableContainers
+                                       error:&error];
+    if( error )
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    else {
+        NSArray *data = jsonDataDict[@"data"];
+        NSLog(@"%d",[data count]);
+        NSArray *dataAM = [data objectAtIndex:0];
+        NSArray *dataPM = [data objectAtIndex:1];
+        NSLog(@"%d",[dataAM count]);
+        NSLog(@"%d",[dataPM count]);
+        
+        for ( NSDictionary *dayInfo in dataPM )
+        {
+            NSLog(@"----");
+            NSLog(@"RealCourseName: %@", dayInfo[@"RealCourseName"] );
+            NSLog(@"TeacherName: %@", dayInfo[@"TeacherName"] );
+            NSLog(@"RoomName: %@", dayInfo[@"RoomName"] );
+            NSLog(@"Morning: %@", dayInfo[@"Morning"] );
+            NSLog(@"NoDay: %@", dayInfo[@"NoDay"] );
+            NSLog(@"TotalDays: %@", dayInfo[@"TotalDays"] );
+            NSLog(@"----");
+        }
+    }
+    NSLog(@"----");
+    NSLog(@"month: %@", jsonDataDict[@"month"] );
+    NSLog(@"year: %@", jsonDataDict[@"year"] );
+    NSLog(@"IDGroup: %@", jsonDataDict[@"IDGroup"] );
+    NSLog(@"----");
+    NSLog(@"%d",[jsonDataDict count]);
 }
+
 -(void)loadDayView{
     CGPoint  startpoint = CGPointMake(0, 0);
     arrayDays = [[NSMutableArray alloc]init];
@@ -203,7 +245,6 @@
     }
     scrollview.contentSize = CGSizeMake(self.view.frame.size.width, startpoint.y);
 }
-
 - (void)viewDidAppear:(BOOL)animated{
     scrollview.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
