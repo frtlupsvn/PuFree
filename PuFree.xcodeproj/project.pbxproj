@@ -28,6 +28,12 @@
 		0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */; };
 		0C9F3F6218EF2B0600D01937 /* MyDayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */; };
 		E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63BA57A18EE88D800767A2A /* PickDateViewController.m */; };
+		E68D67EE18EFC3BF0049602F /* teacher.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67EC18EFC3BF0049602F /* teacher.png */; };
+		E68D67EF18EFC3BF0049602F /* teacher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67ED18EFC3BF0049602F /* teacher@2x.png */; };
+		E68D67F218EFC4C20049602F /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67F018EFC4C20049602F /* room.png */; };
+		E68D67F318EFC4C20049602F /* room@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67F118EFC4C20049602F /* room@2x.png */; };
+		E68D67F918EFC7A50049602F /* attention@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67F818EFC7A50049602F /* attention@2x.png */; };
+		E68D67FB18EFC7A90049602F /* attention.png in Resources */ = {isa = PBXBuildFile; fileRef = E68D67FA18EFC7A90049602F /* attention.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDayInfo.m; sourceTree = "<group>"; };
 		E63BA57918EE88D800767A2A /* PickDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickDateViewController.h; sourceTree = "<group>"; };
 		E63BA57A18EE88D800767A2A /* PickDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickDateViewController.m; sourceTree = "<group>"; };
+		E68D67EC18EFC3BF0049602F /* teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher.png; sourceTree = "<group>"; };
+		E68D67ED18EFC3BF0049602F /* teacher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teacher@2x.png"; sourceTree = "<group>"; };
+		E68D67F018EFC4C20049602F /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
+		E68D67F118EFC4C20049602F /* room@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "room@2x.png"; sourceTree = "<group>"; };
+		E68D67F818EFC7A50049602F /* attention@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attention@2x.png"; sourceTree = "<group>"; };
+		E68D67FA18EFC7A90049602F /* attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attention.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +262,12 @@
 		0C5EE68C18E5D6D200E2D7AE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E68D67FA18EFC7A90049602F /* attention.png */,
+				E68D67F818EFC7A50049602F /* attention@2x.png */,
+				E68D67F018EFC4C20049602F /* room.png */,
+				E68D67F118EFC4C20049602F /* room@2x.png */,
+				E68D67EC18EFC3BF0049602F /* teacher.png */,
+				E68D67ED18EFC3BF0049602F /* teacher@2x.png */,
 				0C1DC66418EAB9A900A43459 /* eco_logo.png */,
 				0C1DC65718EA926C00A43459 /* it_logo.png */,
 			);
@@ -340,10 +358,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68D67FB18EFC7A90049602F /* attention.png in Resources */,
+				E68D67EE18EFC3BF0049602F /* teacher.png in Resources */,
+				E68D67EF18EFC3BF0049602F /* teacher@2x.png in Resources */,
 				0C5EE66218E5D56900E2D7AE /* InfoPlist.strings in Resources */,
 				0C1DC65818EA926C00A43459 /* it_logo.png in Resources */,
 				0C1DC66518EAB9A900A43459 /* eco_logo.png in Resources */,
+				E68D67F318EFC4C20049602F /* room@2x.png in Resources */,
 				0C5EE66A18E5D56900E2D7AE /* Images.xcassets in Resources */,
+				E68D67F218EFC4C20049602F /* room.png in Resources */,
+				E68D67F918EFC7A50049602F /* attention@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

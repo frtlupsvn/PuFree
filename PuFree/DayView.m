@@ -50,17 +50,16 @@
         dayOfWeek.textColor = [UIColor redColor];
     }
     //AM
-    CourseNameAM = [[UILabel alloc]initWithFrame:CGRectMake(120, 5, 220, 25)];
-    CourseNameAM.font = [UIFont systemFontOfSize:15.0];
+    CourseNameAM = [[UILabel alloc]initWithFrame:CGRectMake(120, 3, 200, 25)];
+    [CourseNameAM setFont:[UIFont fontWithName:@"TrebuchetMS-Bold" size:18.0]];
     //CourseNameAM.textAlignment = NSTextAlignmentCenter;
-    TeacherAM = [[UILabel alloc]initWithFrame:CGRectMake(120, 30, 100, 25)];
-    TeacherAM.font = [UIFont systemFontOfSize:12.0];
-    RoomAM = [[UILabel alloc]initWithFrame:CGRectMake(220, 30, 50, 25)];
-    RoomAM.font = [UIFont systemFontOfSize:12.0];
-    NoDayAM = [[UILabel alloc]initWithFrame:CGRectMake(270, 30, 50, 25)];
-    NoDayAM.font = [UIFont systemFontOfSize:12.0];
+    TeacherAM = [[UILabel alloc]initWithFrame:CGRectMake(140, 25, 80, 25)];
+    [TeacherAM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
+    RoomAM = [[UILabel alloc]initWithFrame:CGRectMake(240, 25, 50, 25)];
+    [RoomAM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
+    NoDayAM = [[UILabel alloc]initWithFrame:CGRectMake(290, 25, 50, 25)];
+    [NoDayAM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
     
-    //add Subview
     [self addSubview:CourseNameAM];
     [self addSubview:TeacherAM];
     [self addSubview:RoomAM];
@@ -68,15 +67,15 @@
     
     //PM
     
-    CourseNamePM = [[UILabel alloc]initWithFrame:CGRectMake(120, 55, 220, 25)];
-    CourseNamePM.font = [UIFont systemFontOfSize:15.0];
+    CourseNamePM = [[UILabel alloc]initWithFrame:CGRectMake(120, 53, 200, 25)];
+    [CourseNamePM setFont:[UIFont fontWithName:@"TrebuchetMS-Bold" size:20.0]];
     //CourseNamePM.textAlignment = NSTextAlignmentCenter;
-    TeacherPM = [[UILabel alloc]initWithFrame:CGRectMake(120, 80, 100, 25)];
-    TeacherPM.font = [UIFont systemFontOfSize:12.0];
-    RoomPM = [[UILabel alloc]initWithFrame:CGRectMake(220, 80, 50, 25)];
-    RoomPM.font = [UIFont systemFontOfSize:12.0];
-    NoDayPM = [[UILabel alloc]initWithFrame:CGRectMake(270, 80, 50, 25)];
-    NoDayPM.font = [UIFont systemFontOfSize:12.0];
+    TeacherPM = [[UILabel alloc]initWithFrame:CGRectMake(140, 75, 80, 25)];
+    [TeacherPM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
+    RoomPM = [[UILabel alloc]initWithFrame:CGRectMake(240, 75, 50, 25)];
+    [RoomPM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
+    NoDayPM = [[UILabel alloc]initWithFrame:CGRectMake(290, 75, 50, 25)];
+    [NoDayPM setFont:[UIFont fontWithName:@"TrebuchetMS" size:12.0]];
     
     
     //add Subview
@@ -99,6 +98,25 @@
         TeacherAM.text = _DayInfo.TeacherName;
         RoomAM.text = _DayInfo.RoomName;
         NoDayAM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
+        
+        // Icon
+        UIImageView *teachericon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+        teachericon.frame = CGRectMake(120, 25, 20, 20);
+        //add Subview
+        [self addSubview:teachericon];
+        
+        UIImageView *roomicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+        roomicon.frame = CGRectMake(220, 25, 20, 20);
+        //add Subview
+        [self addSubview:roomicon];
+        
+        UIImageView *attentionicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+        attentionicon.frame = CGRectMake(270, 25, 20, 20);
+        //add Subview
+        //[self addSubview:attentionicon];
+
+
+        
     }
     else
     {
@@ -107,7 +125,26 @@
         TeacherPM.text = _DayInfo.TeacherName;
         RoomPM.text = _DayInfo.RoomName;
         NoDayPM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
+        
+        // Icon
+        UIImageView *teachericon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+        teachericon.frame = CGRectMake(120, 75, 20, 20);
+        //add Subview
+        [self addSubview:teachericon];
+        
+        UIImageView *roomicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+        roomicon.frame = CGRectMake(220, 75, 20, 20);
+        //add Subview
+        [self addSubview:roomicon];
+
+        UIImageView *attentionicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+        attentionicon.frame = CGRectMake(270, 75, 20, 20);
+        //add Subview
+        //[self addSubview:attentionicon];
+
+
     }
+    
 
 }
 
