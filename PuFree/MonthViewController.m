@@ -130,8 +130,9 @@
     arrayDayInfo = [[NSMutableArray alloc]init];
     arrayDate   = [[NSMutableArray alloc]init];
     MyDayInfo *dayInfoModel = [[MyDayInfo alloc]init];
+    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/month.php?month=%d&year=%d&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f",_monthPicked,_yearPicked];
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
-                              [NSURL URLWithString:@"http://binhchonmytam.com/timetable/month.php?month=1&year=2013&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f"]];
+                              [NSURL URLWithString:url]];
     
     
     NSError *error;
@@ -159,6 +160,12 @@
                 [arrayDate addObject:@(dayInfoModel.dateInfo)];
         }
     }
+    NSLog(@"----");
+    NSLog(@"month: %@", jsonDataDict[@"month"] );
+    NSLog(@"year: %@", jsonDataDict[@"year"] );
+    NSLog(@"IDGroup: %@", jsonDataDict[@"IDGroup"] );
+    NSLog(@"----");
+
 }
 
 -(void)loadDayView{
