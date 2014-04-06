@@ -36,7 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //NSLog(@"%@",[NSString stringWithFormat:@"%d-%d",_monthPicked,_yearPicked]);
     // Scroll View
     scrollview = [[ UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:scrollview];
@@ -47,9 +46,6 @@
     [self daysOfMonth:dayPicked];
     [self loadData];
     [self loadDayView];
-    //self.title = [NSString stringWithFormat:@"%d-%d %@",_monthCurrent,_yearCurrent,codeClass];
-    //NSLog([NSString stringWithFormat:@"Days length: %d",monthlength]);
-    
     // Add swipeGestures
     UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc]
                                                      initWithTarget:self
@@ -76,7 +72,7 @@
     //NSLog(@"swipe right");
 }
 
--(NSString*)dayOfWeek:(int)_day month:(int)_month year:(int)_year{
+-(NSString*)dayOfWeek:(int)_day{
     //Day of week
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
@@ -84,13 +80,11 @@
     [components setYear:_yearPicked];
     [components setMonth:_monthPicked];
     [components setDay:_day];
-    //NSLog(@"Awesome time: %@", [calendar dateFromComponents:components]);
     
     NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
     [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     [theDateFormatter setDateFormat:@"EEEE"];
     NSString *weekDay =  [theDateFormatter stringFromDate:[calendar dateFromComponents:components]];
-    //NSLog(weekDay);
     return weekDay;
 }
 -(void)daysOfMonth:(NSDate*)_date{
@@ -101,19 +95,23 @@
 -(void)getToday{
     //get Date now
     today = [NSDate date];
-    //NSLog(@"now: %@",today);
     
     NSString * stringDate = [[NSString alloc]initWithFormat:@"%@",today];
     NSArray * arr1 = [stringDate componentsSeparatedByString:@" "];
     NSString * str = [arr1 objectAtIndex:0];
-    //NSLog(@"String Date : %@",str);
     
     NSArray * arr2 = [str componentsSeparatedByString:@"-"];
     _dayCurrent = [[arr2 objectAtIndex:2] intValue];
     _monthCurrent = [[arr2 objectAtIndex:1]intValue];
     _yearCurrent = [[arr2 objectAtIndex:0] intValue];
     
-    //NSLog(@"Day: %d , Month : %d , Year : %d",_dayCurrent,_monthCurrent,_yearCurrent);
+}
+-(int)getDate:(NSString*)_stringDate
+{
+    NSArray * arr1 = [_stringDate componentsSeparatedByString:@" "];
+    NSString * str = [arr1 objectAtIndex:0];
+    NSArray * arr2 = [str componentsSeparatedByString:@"-"];
+    return [[arr2 objectAtIndex:2] intValue];
 }
 -(void)getPickedDay
 {
@@ -123,63 +121,17 @@
     [componentsDate setYear:_yearPicked];
     [componentsDate setMonth:_monthPicked];
     [componentsDate setDay:15];
-    //NSLog(@"Time Picked: %@", [calendar dateFromComponents:components]);
     dayPicked = [calendar dateFromComponents:componentsDate];
-    //NSLog(@"Time Picked: %@",dayPicked);
     
 }
 
 -(void)loadData
 {
-//    arrayDayInfo = [[NSMutableArray alloc]init];
-//    arrayDate   = [[NSMutableArray alloc]init];
-//    MyDayInfo *dayInfo = [[MyDayInfo alloc]init];
-//    dayInfo.RealCourseName = @"Toan";
-//    dayInfo.TeacherName = @"Thanh";
-//    dayInfo.RoomName =  @"515";
-//    dayInfo.Morning = TRUE;
-//    dayInfo.Noday = 5;
-//    dayInfo.TotalDays = 10;
-//    dayInfo.dateInfo = 5;
-//    [arrayDayInfo addObject:dayInfo];
-//    [arrayDate addObject:@(dayInfo.dateInfo)];
-//    
-//    dayInfo = [[MyDayInfo alloc]init];
-//    dayInfo.RealCourseName = @"VAN";
-//    dayInfo.TeacherName = @"NGA";
-//    dayInfo.RoomName =  @"512";
-//    dayInfo.Morning = FALSE;
-//    dayInfo.Noday = 1;
-//    dayInfo.TotalDays = 1;
-//    dayInfo.dateInfo = 8;
-//    [arrayDayInfo addObject:dayInfo];
-//    [arrayDate addObject:@(dayInfo.dateInfo)];
-//    
-//    dayInfo = [[MyDayInfo alloc]init];
-//    dayInfo.RealCourseName = @"SU";
-//    dayInfo.TeacherName = @"NAM";
-//    dayInfo.RoomName =  @"100";
-//    dayInfo.Morning = FALSE;
-//    dayInfo.Noday = 2;
-//    dayInfo.TotalDays = 8;
-//    dayInfo.dateInfo = 12;
-//    [arrayDayInfo addObject:dayInfo];
-//    [arrayDate addObject:@(dayInfo.dateInfo)];
-//    
-//    dayInfo = [[MyDayInfo alloc]init];
-//    dayInfo.RealCourseName = @"SINH";
-//    dayInfo.TeacherName = @"LAN";
-//    dayInfo.RoomName =  @"91";
-//    dayInfo.Morning = TRUE;
-//    dayInfo.Noday = 3;
-//    dayInfo.TotalDays = 7;
-//    dayInfo.dateInfo = 30;
-//    [arrayDayInfo addObject:dayInfo];
-//    [arrayDate addObject:@(dayInfo.dateInfo)];
-    
     arrayDayInfo = [[NSMutableArray alloc]init];
+    arrayDate   = [[NSMutableArray alloc]init];
+    MyDayInfo *dayInfoModel = [[MyDayInfo alloc]init];
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
-                              [NSURL URLWithString:@"http://binhchonmytam.com/timetable/month.php?month=2&year=2013&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f"]];
+                              [NSURL URLWithString:@"http://binhchonmytam.com/timetable/month.php?month=1&year=2013&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f"]];
     
     
     NSError *error;
@@ -193,30 +145,20 @@
     }
     else {
         NSArray *data = jsonDataDict[@"data"];
-        NSLog(@"%d",[data count]);
-        NSArray *dataAM = [data objectAtIndex:0];
-        NSArray *dataPM = [data objectAtIndex:1];
-        NSLog(@"%d",[dataAM count]);
-        NSLog(@"%d",[dataPM count]);
-        
-        for ( NSDictionary *dayInfo in dataPM )
+        for ( NSDictionary *dayInfo in data )
         {
-            NSLog(@"----");
-            NSLog(@"RealCourseName: %@", dayInfo[@"RealCourseName"] );
-            NSLog(@"TeacherName: %@", dayInfo[@"TeacherName"] );
-            NSLog(@"RoomName: %@", dayInfo[@"RoomName"] );
-            NSLog(@"Morning: %@", dayInfo[@"Morning"] );
-            NSLog(@"NoDay: %@", dayInfo[@"NoDay"] );
-            NSLog(@"TotalDays: %@", dayInfo[@"TotalDays"] );
-            NSLog(@"----");
+                dayInfoModel = [[MyDayInfo alloc]init];
+                dayInfoModel.RealCourseName = dayInfo[@"RealCourseName"];
+                dayInfoModel.TeacherName = dayInfo[@"TeacherName"];
+                dayInfoModel.RoomName =  dayInfo[@"RoomName"];
+                dayInfoModel.Morning = (BOOL)[dayInfo[@"Morning"] intValue];
+                dayInfoModel.dateInfo = [self getDate:dayInfo[@"InDate"]];
+                dayInfoModel.Noday = [dayInfo[@"NoDay"] intValue];
+                dayInfoModel.TotalDays = [dayInfo[@"TotalDays"] intValue];
+                [arrayDayInfo addObject:dayInfoModel];
+                [arrayDate addObject:@(dayInfoModel.dateInfo)];
         }
     }
-    NSLog(@"----");
-    NSLog(@"month: %@", jsonDataDict[@"month"] );
-    NSLog(@"year: %@", jsonDataDict[@"year"] );
-    NSLog(@"IDGroup: %@", jsonDataDict[@"IDGroup"] );
-    NSLog(@"----");
-    NSLog(@"%d",[jsonDataDict count]);
 }
 
 -(void)loadDayView{
@@ -224,10 +166,10 @@
     arrayDays = [[NSMutableArray alloc]init];
     for (int i =1;i<=_monthlengthPicked;i++)
     {
-        dayView = [[DayView alloc]initWithDayInfo:i dayOfWeek:[self dayOfWeek:i month:_monthCurrent year:_yearCurrent] sunday:[[self dayOfWeek:i month:_monthCurrent year:_yearCurrent] isEqualToString:@"Sunday"]];
+        dayView = [[DayView alloc]initWithDayInfo:i dayOfWeek:[self dayOfWeek:i] sunday:[[self dayOfWeek:i] isEqualToString:@"Sunday"]];
         dayView.frame = CGRectMake(startpoint.x, startpoint.y,dayView.frame.size.width,dayView.frame.size.height);
         [scrollview addSubview:dayView];
-        if ([[self dayOfWeek:i month:_monthCurrent year:_yearCurrent] isEqualToString:@"Sunday"])
+        if ([[self dayOfWeek:i] isEqualToString:@"Sunday"])
         {
             startpoint.y+=dayView.frame.size.height+20;
         }

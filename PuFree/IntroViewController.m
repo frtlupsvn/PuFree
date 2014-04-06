@@ -17,35 +17,7 @@
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI{
     self = [super init];
     coreGUI = _coreGUI;
-    //
-    self.view.backgroundColor = [UIColor colorWithRed:(247/255.0) green:(247/255.0) blue:(247/255.0) alpha:1.0];
-    UILabel *NameApp = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/8, self.view.frame.size.width, 60)];
-    [NameApp setTextAlignment:NSTextAlignmentCenter];
-    NameApp.textColor = [UIColor colorWithRed:(128/255.0) green:(128/255.0) blue:(128/255.0) alpha:1.0];
-    [NameApp setText:@"Always Beside You"];
-    [NameApp setFont:[UIFont systemFontOfSize:30]];
-    [self.view addSubview:NameApp];
-    
-    UILabel *Slogan = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/8+40, self.view.frame.size.width, 30)];
-    [Slogan setTextAlignment:NSTextAlignmentCenter];
-    Slogan.textColor = [UIColor colorWithRed:(150/255.0) green:(150/255.0) blue:(150/255.0) alpha:1.0];
-    [Slogan setText:@"Turn off your computer, and feel the beat"];
-    [Slogan setFont:[UIFont systemFontOfSize:8]];
-    [self.view addSubview:Slogan];
-    
-    UILabel *Version = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 30)];
-    [Version setTextAlignment:NSTextAlignmentCenter];
-    Version.textColor = [UIColor colorWithRed:(128/255.0) green:(128/255.0) blue:(128/255.0) alpha:1.0];
-    [Version setText:@"Version 1.0"];
-    [Version setFont:[UIFont systemFontOfSize:8]];
-    [self.view addSubview:Version];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [btn setFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, 30)];
-    [btn setTitle:@"List Class" forState:UIControlStateNormal];
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(btnpressed:) forControlEvents:UIControlEventTouchUpInside];
-    //
+    self.view.backgroundColor = [UIColor whiteColor];
     return self;
 }
 - (void)btnpressed:(id)sender{
@@ -55,6 +27,37 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+//    if (screenBounds.size.height == 568)
+//    {
+//        UIImageView *bg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-568h@2x.jpg"]];
+//        bg.frame = CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height);
+//        [self.view addSubview:bg] ;
+//    } else
+//    {
+//        UIImageView *bg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background.jpg"]];
+//        bg.frame = CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height);
+//        [self.view addSubview:bg] ;
+//    }
+    UIImageView *logohusat = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logotimetable.png"]];
+    logohusat.frame = CGRectMake(0,self.view.frame.size.height/4, self.view.frame.size.width, 267);
+    [self.view addSubview:logohusat] ;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, 30)];
+    [btn setTitle:@"List Class" forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnpressed:) forControlEvents:UIControlEventTouchUpInside];
+
+    UILabel *Version = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 30)];
+    [Version setTextAlignment:NSTextAlignmentCenter];
+    Version.textColor = [UIColor colorWithRed:(128/255.0) green:(128/255.0) blue:(128/255.0) alpha:1.0];
+    [Version setText:@"PuF HoChiMinh-City - version 1.0"];
+    //Version.textColor = [UIColor blackColor];
+    [Version setFont:[UIFont systemFontOfSize:12.0]];
+    [self.view addSubview:Version];
+
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -24,4 +24,6 @@
 }
 -(id)initWithDayInfo:(int)_day dayOfWeek:(NSString*)_dayOfWeek sunday:(BOOL)_sunday;
 -(void)loadDayInfo:(MyDayInfo*)_DayInfo;
+-(void)loadDayInfoAM:(MyDayInfo*)_DayInfo;
+-(void)loadDayInfoPM:(MyDayInfo*)_DayInfo;
 @end

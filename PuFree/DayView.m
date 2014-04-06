@@ -43,7 +43,7 @@
     [self addSubview:lineVerti];
     [self addSubview:day];
     [self addSubview:dayOfWeek];
-
+    
     if (_sunday)
     {
         day.textColor = [UIColor redColor];
@@ -83,10 +83,6 @@
     [self addSubview:TeacherPM];
     [self addSubview:RoomPM];
     [self addSubview:NoDayPM];
-
-    
-    
-    
     return self;
 }
 -(void)loadDayInfo:(MyDayInfo*)_DayInfo
@@ -100,61 +96,110 @@
         NoDayAM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
         
         // Icon
-        UIImageView *teachericon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
-        teachericon.frame = CGRectMake(120, 25, 20, 20);
+        UIImageView *teachericonAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+        teachericonAM.frame = CGRectMake(120, 25, 20, 20);
         //add Subview
-        [self addSubview:teachericon];
+        [self addSubview:teachericonAM];
         
-        UIImageView *roomicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
-        roomicon.frame = CGRectMake(220, 25, 20, 20);
+        UIImageView *roomiconAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+        roomiconAM.frame = CGRectMake(220, 25, 20, 20);
         //add Subview
-        [self addSubview:roomicon];
+        [self addSubview:roomiconAM];
         
-        UIImageView *attentionicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
-        attentionicon.frame = CGRectMake(270, 25, 20, 20);
+        UIImageView *attentioniconAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+        attentioniconAM.frame = CGRectMake(270, 25, 20, 20);
         //add Subview
-        //[self addSubview:attentionicon];
-
-
-        
+        //[self addSubview:attentioniconAM];
     }
-    else
+    else{
+            // Add Day Info PM
+            CourseNamePM.text = _DayInfo.RealCourseName;
+            TeacherPM.text = _DayInfo.TeacherName;
+            RoomPM.text = _DayInfo.RoomName;
+            NoDayPM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
+            
+            // Icon
+            UIImageView *teachericonPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+            teachericonPM.frame = CGRectMake(120, 75, 20, 20);
+            //add Subview
+            [self addSubview:teachericonPM];
+            
+            UIImageView *roomiconPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+            roomiconPM.frame = CGRectMake(220, 75, 20, 20);
+            //add Subview
+            [self addSubview:roomiconPM];
+            
+            UIImageView *attentioniconPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+            attentioniconPM.frame = CGRectMake(270, 75, 20, 20);
+            //add Subview
+            //[self addSubview:attentioniconPM];
+    }
+
+}
+-(void)loadDayInfoAM:(MyDayInfo*)_DayInfo
+{
+    if(_DayInfo.Morning)
     {
-        // Add Day Info AM
+    // Add Day Info AM
+    CourseNameAM.text = _DayInfo.RealCourseName;
+    TeacherAM.text = _DayInfo.TeacherName;
+    RoomAM.text = _DayInfo.RoomName;
+    NoDayAM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
+    
+    // Icon
+    UIImageView *teachericonAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+    teachericonAM.frame = CGRectMake(120, 25, 20, 20);
+    //add Subview
+    [self addSubview:teachericonAM];
+    
+    UIImageView *roomiconAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+    roomiconAM.frame = CGRectMake(220, 25, 20, 20);
+    //add Subview
+    [self addSubview:roomiconAM];
+    
+    UIImageView *attentioniconAM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+    attentioniconAM.frame = CGRectMake(270, 25, 20, 20);
+    //add Subview
+    //[self addSubview:attentioniconAM];
+    }
+}
+-(void)loadDayInfoPM:(MyDayInfo*)_DayInfo
+{
+    if(!(_DayInfo.Morning))
+    {
+        // Add Day Info PM
         CourseNamePM.text = _DayInfo.RealCourseName;
         TeacherPM.text = _DayInfo.TeacherName;
         RoomPM.text = _DayInfo.RoomName;
         NoDayPM.text = [NSString stringWithFormat:@"%d/%d",_DayInfo.Noday,_DayInfo.TotalDays];
         
         // Icon
-        UIImageView *teachericon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
-        teachericon.frame = CGRectMake(120, 75, 20, 20);
+        UIImageView *teachericonPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"teacher.png"]];
+        teachericonPM.frame = CGRectMake(120, 75, 20, 20);
         //add Subview
-        [self addSubview:teachericon];
+        [self addSubview:teachericonPM];
         
-        UIImageView *roomicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
-        roomicon.frame = CGRectMake(220, 75, 20, 20);
+        UIImageView *roomiconPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"room.png"]];
+        roomiconPM.frame = CGRectMake(220, 75, 20, 20);
         //add Subview
-        [self addSubview:roomicon];
-
-        UIImageView *attentionicon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
-        attentionicon.frame = CGRectMake(270, 75, 20, 20);
+        [self addSubview:roomiconPM];
+        
+        UIImageView *attentioniconPM = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"attention.png"]];
+        attentioniconPM.frame = CGRectMake(270, 75, 20, 20);
         //add Subview
-        //[self addSubview:attentionicon];
-
-
+        //[self addSubview:attentioniconPM];
     }
     
-
 }
+
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

@@ -11,6 +11,7 @@
 		0C1DC66518EAB9A900A43459 /* eco_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DC66418EAB9A900A43459 /* eco_logo.png */; };
 		0C1DC66918EABC0100A43459 /* DayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DC66818EABC0100A43459 /* DayView.m */; };
 		0C1DC66D18EABC7C00A43459 /* MonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DC66C18EABC7C00A43459 /* MonthViewController.m */; };
+		0C20E6DB18F16F4D00612491 /* logotimetable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C20E6DA18F16F4D00612491 /* logotimetable@2x.png */; };
 		0C5EE65818E5D56900E2D7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65718E5D56900E2D7AE /* Foundation.framework */; };
 		0C5EE65A18E5D56900E2D7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65918E5D56900E2D7AE /* CoreGraphics.framework */; };
 		0C5EE65C18E5D56900E2D7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EE65B18E5D56900E2D7AE /* UIKit.framework */; };
@@ -25,6 +26,7 @@
 		0C5EE67D18E5D56900E2D7AE /* PuFreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE67C18E5D56900E2D7AE /* PuFreeTests.m */; };
 		0C5EE68F18E5D71400E2D7AE /* CoreGUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */; };
 		0C5EE69218E5DC7A00E2D7AE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */; };
+		0C99D45E18F16A6E003EA8BF /* logotimetable.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C99D45D18F16A6E003EA8BF /* logotimetable.png */; };
 		0C9B2B7B18E6AE81007227D1 /* ListClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */; };
 		0C9F3F6218EF2B0600D01937 /* MyDayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F3F6118EF2B0600D01937 /* MyDayInfo.m */; };
 		E63BA57B18EE88D800767A2A /* PickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63BA57A18EE88D800767A2A /* PickDateViewController.m */; };
@@ -53,6 +55,7 @@
 		0C1DC66818EABC0100A43459 /* DayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayView.m; sourceTree = "<group>"; };
 		0C1DC66B18EABC7C00A43459 /* MonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthViewController.h; sourceTree = "<group>"; };
 		0C1DC66C18EABC7C00A43459 /* MonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthViewController.m; sourceTree = "<group>"; };
+		0C20E6DA18F16F4D00612491 /* logotimetable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logotimetable@2x.png"; sourceTree = "<group>"; };
 		0C5EE65418E5D56900E2D7AE /* PuFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C5EE65718E5D56900E2D7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0C5EE65918E5D56900E2D7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,6 +76,7 @@
 		0C5EE68E18E5D71400E2D7AE /* CoreGUIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGUIController.m; sourceTree = "<group>"; };
 		0C5EE69018E5DC7A00E2D7AE /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		0C5EE69118E5DC7A00E2D7AE /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		0C99D45D18F16A6E003EA8BF /* logotimetable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logotimetable.png; sourceTree = "<group>"; };
 		0C9B2B7918E6AE81007227D1 /* ListClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListClassViewController.h; sourceTree = "<group>"; };
 		0C9B2B7A18E6AE81007227D1 /* ListClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListClassViewController.m; sourceTree = "<group>"; };
 		0C9F3F6018EF2B0600D01937 /* MyDayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDayInfo.h; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 		0C5EE68C18E5D6D200E2D7AE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0C20E6DA18F16F4D00612491 /* logotimetable@2x.png */,
+				0C99D45D18F16A6E003EA8BF /* logotimetable.png */,
 				E68D67FA18EFC7A90049602F /* attention.png */,
 				E68D67F818EFC7A50049602F /* attention@2x.png */,
 				E68D67F018EFC4C20049602F /* room.png */,
@@ -373,7 +379,9 @@
 				0C1DC65818EA926C00A43459 /* it_logo.png in Resources */,
 				0C1DC66518EAB9A900A43459 /* eco_logo.png in Resources */,
 				E68D67F318EFC4C20049602F /* room@2x.png in Resources */,
+				0C20E6DB18F16F4D00612491 /* logotimetable@2x.png in Resources */,
 				0C5EE66A18E5D56900E2D7AE /* Images.xcassets in Resources */,
+				0C99D45E18F16A6E003EA8BF /* logotimetable.png in Resources */,
 				E68D67F218EFC4C20049602F /* room.png in Resources */,
 				E68D67F918EFC7A50049602F /* attention@2x.png in Resources */,
 			);
