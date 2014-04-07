@@ -26,5 +26,5 @@
 -(void)StartProgram;
 -(void)ShowListClass;
 -(void)PickClass:(NSString*)_codeClass;
--(void)DatePicked:(int)_month year:(int)_year;
+-(void)DatePicked:(int)_month year:(int)_year codeClass:(NSString*)_codeClass;
 @end

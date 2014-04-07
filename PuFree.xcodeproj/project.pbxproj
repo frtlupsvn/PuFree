@@ -115,13 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C13075D18EFF98100128546 /* JSON Kit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "JSON Kit";
-			sourceTree = "<group>";
-		};
 		0C1DC65918EA928800A43459 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +184,6 @@
 		0C5EE65D18E5D56900E2D7AE /* PuFree */ = {
 			isa = PBXGroup;
 			children = (
-				0C13075D18EFF98100128546 /* JSON Kit */,
 				0C5EE68C18E5D6D200E2D7AE /* Images */,
 				0C5EE68B18E5D6C700E2D7AE /* Model */,
 				0C5EE68A18E5D6AD00E2D7AE /* View */,

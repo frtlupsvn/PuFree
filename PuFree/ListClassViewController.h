@@ -12,7 +12,9 @@
     CoreGUIController *coreGUI;
     UITableView *tableView;
     NSArray *listClassInfoArray;
-    NSArray *listClassEcoArray;
+    NSArray *listClassEcoFrArray;
+    NSArray *listClassEcoEnArray;
+    //NSArray *listClassMasterArray;
 }
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI;
 @end

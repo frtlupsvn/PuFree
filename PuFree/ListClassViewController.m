@@ -30,7 +30,9 @@
     
     //Add Data to Array
     listClassInfoArray = [NSArray arrayWithObjects:@"LINF11",@"LINF12",@"LINF13",nil];
-    listClassEcoArray = [NSArray arrayWithObjects:@"LEGF11",@"LEGF12",@"LEGF13",nil];
+    listClassEcoFrArray = [NSArray arrayWithObjects:@"LEG11F",@"LEG12F",@"LEG13F",nil];
+    listClassEcoEnArray = [NSArray arrayWithObjects:@"LEG11A",@"LEG12A",@"LEG13A",nil];
+    //listClassMasterArray = [NSArray arrayWithObjects:@"LEG11A",@"LEG12A",@"LEG13A",nil];
     
     //Table View List Class
     tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)style:UITableViewStylePlain];
@@ -46,19 +48,23 @@
 //TableView Delegate
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if(section==0)
-        return @"Informatique";
+        return @"Licence Informatique";
+    else if(section==1)
+        return @"Licence Gestion Economie Français";
     else
-        return @"Gestion Economie";
+        return @"Licence Gestion Economie Anglais";
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
         return listClassInfoArray.count;
+    else if(section==1)
+        return listClassEcoFrArray.count;
     else
-        return listClassEcoArray.count;
+        return listClassEcoEnArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -70,13 +76,21 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Informatique";
     }
-    else
+    else if (indexPath.section == 1)
     {
-        cell.textLabel.text = [listClassEcoArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = [listClassEcoFrArray objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.detailTextLabel.text = @"Licence Economique";
+        cell.detailTextLabel.text = @"Licence Economique Français";
     }
+    else 
+        {
+        cell.textLabel.text = [listClassEcoEnArray objectAtIndex:indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.detailTextLabel.text = @"Licence Economique Anglais";
+        }
+
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

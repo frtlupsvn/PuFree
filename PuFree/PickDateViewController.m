@@ -14,11 +14,12 @@
 
 @implementation PickDateViewController
 
--(id)initWithCoreGUI:(CoreGUIController*)_coreGUI
+-(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString *)_codeClass
 {
     self =[super init];
     coreGUI = _coreGUI;
-    self.title = @"Date";
+    codeClass = _codeClass;
+    self.title = @"Date and Group";
     self.view.backgroundColor = [UIColor whiteColor];
     return self;
 }
@@ -30,6 +31,7 @@
     arrayMonth = [[NSArray alloc]initWithObjects:@"Month",@"January",@"February",@"March",@"April",@"May"
                   ,@"June",@"July",@"Auguest",@"September",@"October",@"November",@"December",  nil];
     arrayYear = [[NSArray alloc]initWithObjects:@"Year",@"2013",@"2014", nil];
+    classGroup = [[NSArray alloc]initWithObjects:codeClass,[NSString stringWithFormat:@"%@_G1",codeClass],[NSString stringWithFormat:@"%@_G2",codeClass], nil];
     pickerView.delegate = self;
     [self.view addSubview:pickerView];
     UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
@@ -71,7 +73,7 @@
     else
     {
         NSLog(@"Show Time Table Pressed");
-        [coreGUI DatePicked:_monthPicked year:_yearPicked];
+        [coreGUI DatePicked:_monthPicked year:_yearPicked codeClass:codeClassGroup];
     }
 }
 -(void)PickerViewJumpToRow:(id)sender
@@ -88,44 +90,84 @@
     
     NSLog(@"%d %d",_monthPicked,_yearPicked);
 }
+-(Boolean)checkCodeClass:(NSString*)_codeClass{
+    if([_codeClass isEqualToString:@"LINF11"]||[_codeClass isEqualToString:@"LINF12"]||[_codeClass isEqualToString:@"LINF13"])
+        return true;
+    else
+        return false;
+}
 //Picker Delegate
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 2;
+    if([self checkCodeClass:codeClass])
+        return 2;
+    else
+        return 3;
+    
 }
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     if( component == 0)
     {
-    return [arrayMonth count];
+        return [arrayMonth count];
     }
-    else
+    else if( component == 1)
     {
         return [arrayYear count];
+    } else {
+        return [classGroup count];
     }
-
+    
 }
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if( component == 0)
     {
-    return [arrayMonth objectAtIndex:row];
+        return [arrayMonth objectAtIndex:row];
     }
-    else
+    else if( component == 1)
     {
         return [arrayYear objectAtIndex:row];
+    } else
+    {
+        return [classGroup objectAtIndex:row];
     }
+}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont fontWithName:@"ArialMT" size:16];
+    
+    if(component == 0)
+    {
+        if(row == 0)
+            label.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
+        
+        label.text = [arrayMonth objectAtIndex:row];
+    }
+    else if( component == 1)
+    {
+        if(row == 0)
+            label.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
+        
+        label.text = [arrayYear objectAtIndex:row];
+    }
+    else{
+        label.text = [classGroup objectAtIndex:row];
+    }
+    return label;
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if(component == 0)
     {
-    //NSLog([NSString stringWithFormat:@"Month :%d",row]);
+        //NSLog([NSString stringWithFormat:@"Month :%d",row]);
         _monthPicked = row;
     }
-    else
+    else if (component == 1)
     {
-    //NSLog([NSString stringWithFormat:@"Year :%d",row]);
+        //NSLog([NSString stringWithFormat:@"Year :%d",row]);
         if (row == 0) {
             _yearPicked = 0;
         } else {
@@ -134,31 +176,45 @@
                 _yearPicked = 2013;
             }
             else
+            {
+                if (row == 2)
                 {
-                    if (row == 2)
-                    {
-                        _yearPicked = 2014;
-                    }
+                    _yearPicked = 2014;
+                }
+            }
         }
+    } else if (component == 2)
+    {
+        if(row == 1)
+        {
+            codeClassGroup = [NSString stringWithFormat:@"%@_G1",codeClass];
         }
+        else if(row == 2)
+        {
+            codeClassGroup = [NSString stringWithFormat:@"%@_G2",codeClass];
+        } 
+        
     }
 }
+
 //
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated{
+    codeClassGroup = codeClass;
 }
-*/
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -18,14 +18,17 @@
 {
     self = [super init];
     coreGUI = _coreGUI;
+    codeClass = _codeClass;
     _monthPicked = _month;
     _yearPicked = _year;
     self.view.backgroundColor = [UIColor colorWithRed:(198/255.0) green:(198/255.0) blue:(202/255.0) alpha:1.0];
     self.title = [NSString stringWithFormat:@"%d-%d %@",_monthPicked,_yearPicked,_codeClass];
-    UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Reload" style:UIBarButtonItemStylePlain target:self action:@selector(todayJump:)];
-    self.navigationItem.rightBarButtonItem = TodayButton;
+    //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Reload" style:UIBarButtonItemStylePlain target:self action:@selector(todayJump:)];
+    //self.navigationItem.rightBarButtonItem = TodayButton;
     width = self.view.frame.size.width;
     height =self.view.frame.size.height;
+    // Creat ID list Class
+    
     return self;
 }
 -(void)todayJump:(id)sender{
@@ -44,6 +47,7 @@
     //
     [self getPickedDay];
     [self daysOfMonth:dayPicked];
+    [self getIDClassFromJson:codeClass];
     [self loadData];
     [self loadDayView];
     // Add swipeGestures
@@ -124,13 +128,43 @@
     dayPicked = [calendar dateFromComponents:componentsDate];
     
 }
-
+-(NSString*)getIDClassFromJson:(NSString*)_codeClass
+{
+    NSString *idclass;
+    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/group_list.php"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
+                        [NSURL URLWithString:url]];
+    NSError *error;
+    NSMutableDictionary *jsonIDclass = [NSJSONSerialization
+                                         JSONObjectWithData:jsonData
+                                         options:NSJSONReadingMutableContainers
+                                         error:&error];
+    if( error )
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    else {
+        NSArray *idlistclass = jsonIDclass[@"idlistclass"];
+        for ( NSDictionary *IDclass in idlistclass )
+        {
+            NSLog(@"----");
+            NSLog(@"ID: %@", IDclass[@"Id"] );
+            NSLog(@"Class: %@", IDclass[@"GroupName"] );
+            NSLog(@"----");
+            if([_codeClass isEqualToString:IDclass[@"GroupName"]])
+            {
+                idclass = IDclass[@"Id"];
+            }
+        }
+    }
+    return idclass;
+}
 -(void)loadData
 {
     arrayDayInfo = [[NSMutableArray alloc]init];
     arrayDate   = [[NSMutableArray alloc]init];
     MyDayInfo *dayInfoModel = [[MyDayInfo alloc]init];
-    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/month.php?month=%d&year=%d&idgroup=1f3aa243-a601-4015-978b-b4a3057ee45f",_monthPicked,_yearPicked];
+    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/month.php?month=%d&year=%d&idgroup=%@",_monthPicked,_yearPicked,[self getIDClassFromJson:codeClass]];
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
                               [NSURL URLWithString:url]];
     

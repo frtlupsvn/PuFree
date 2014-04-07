@@ -27,18 +27,14 @@
 }
 -(void)PickClass:(NSString*)_codeClass{
     codeClass=_codeClass;
-    //NSLog(codeClass);
-    //
-    //monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass];
-    pickDateView = [[PickDateViewController alloc]initWithCoreGUI:self];
+    pickDateView = [[PickDateViewController alloc]initWithCoreGUI:self codeClass:_codeClass];
     [navigation pushViewController:pickDateView animated:YES];
 }
--(void)DatePicked:(int)_month year:(int)_year
+-(void)DatePicked:(int)_month year:(int)_year codeClass:(NSString*)_codeClass
 {
     monthPicked = _month;
     yearPicked = _year;
-    //NSLog([NSString stringWithFormat:@"Class : %@ , month :%d , year :%d",codeClass,monthPicked,yearPicked]);
-    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:codeClass month:monthPicked year:yearPicked];
+    monthView = [[MonthViewController alloc]initWithCoreGUI:self codeClass:_codeClass month:monthPicked year:yearPicked];
     [navigation pushViewController:monthView animated:YES];
 }
 @end

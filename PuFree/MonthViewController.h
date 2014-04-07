@@ -38,6 +38,7 @@
     NSMutableArray *arrayDays;
     NSMutableArray *arrayDate;
     
+    
 
 }
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI codeClass:(NSString*)_codeClass month:(int)_month year:(int)_year;
