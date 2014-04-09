@@ -17,6 +17,10 @@
     //
     coreGUI =[[CoreGUIController alloc]initCoreGUIController:self.window];
     [coreGUI StartProgram];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(22/255.0) green:(160/255.0) blue:(133/255.0) alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:236.0/255.0 green:240.0/255.0 blue:241.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIFont fontWithName:@"TrebuchetMS-Bold" size:18.0], NSFontAttributeName, nil]];
     //
     [self.window makeKeyAndVisible];
     return YES;

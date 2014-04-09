@@ -17,7 +17,7 @@
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI{
     self = [super init];
     coreGUI = _coreGUI;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:(22/255.0) green:(160/255.0) blue:(133/255.0) alpha:1.0];
     return self;
 }
 - (void)btnpressed:(id)sender{
@@ -26,33 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-//    if (screenBounds.size.height == 568)
-//    {
-//        UIImageView *bg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background-568h@2x.jpg"]];
-//        bg.frame = CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height);
-//        [self.view addSubview:bg] ;
-//    } else
-//    {
-//        UIImageView *bg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background.jpg"]];
-//        bg.frame = CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height);
-//        [self.view addSubview:bg] ;
-//    }
-    UIImageView *logohusat = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logotimetable.png"]];
-    logohusat.frame = CGRectMake(0,self.view.frame.size.height/4, self.view.frame.size.width, 267);
-    [self.view addSubview:logohusat] ;
+        UIImageView *logohusat = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo2.png"]];
+    logohusat.frame = CGRectMake(0,self.view.frame.size.height/4, self.view.frame.size.width, 160);
+    //[self.view addSubview:logohusat] ;
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [btn setFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, 30)];
-    [btn setTitle:@"List Class" forState:UIControlStateNormal];
+    [btn setFrame:CGRectMake(0, self.view.frame.size.height/4, self.view.frame.size.width, 160)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"logo2.png"] forState:UIControlStateNormal];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnpressed:) forControlEvents:UIControlEventTouchUpInside];
 
     UILabel *Version = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 30)];
     [Version setTextAlignment:NSTextAlignmentCenter];
-    Version.textColor = [UIColor colorWithRed:(128/255.0) green:(128/255.0) blue:(128/255.0) alpha:1.0];
-    [Version setText:@"PuF HoChiMinh-City - version 1.0"];
+    Version.textColor = [UIColor colorWithRed:(236/255.0) green:(240/255.0) blue:(241/255.0) alpha:1.0];
+    [Version setText:@"PUF HoChiMinh-City - version 1.0"];
     //Version.textColor = [UIColor blackColor];
     [Version setFont:[UIFont systemFontOfSize:12.0]];
     [self.view addSubview:Version];

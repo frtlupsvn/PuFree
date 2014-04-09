@@ -35,6 +35,7 @@
     pickerView.delegate = self;
     [self.view addSubview:pickerView];
     UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
+    //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
     self.navigationItem.rightBarButtonItem = TodayButton;
     [self getToday];
     // Add Button go to Calendar
