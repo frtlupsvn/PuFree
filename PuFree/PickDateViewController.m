@@ -34,10 +34,16 @@
     classGroup = [[NSArray alloc]initWithObjects:codeClass,[NSString stringWithFormat:@"%@_G1",codeClass],[NSString stringWithFormat:@"%@_G2",codeClass], nil];
     pickerView.delegate = self;
     [self.view addSubview:pickerView];
+<<<<<<< HEAD
     //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:
     //                                UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
     //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
     //self.navigationItem.rightBarButtonItem = TodayButton;
+=======
+    //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
+    UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
+    self.navigationItem.rightBarButtonItem = TodayButton;
+>>>>>>> FETCH_HEAD
     [self getToday];
     // Add Button go to Calendar
     UIButton * showMonthView = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -139,19 +145,31 @@
     
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor blackColor];
+<<<<<<< HEAD
     label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+=======
+    label.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
+>>>>>>> FETCH_HEAD
     
     if(component == 0)
     {
         if(row == 0)
+<<<<<<< HEAD
             label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+=======
+            label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+>>>>>>> FETCH_HEAD
         
         label.text = [arrayMonth objectAtIndex:row];
     }
     else if( component == 1)
     {
         if(row == 0)
+<<<<<<< HEAD
             label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+=======
+            label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+>>>>>>> FETCH_HEAD
         
         label.text = [arrayYear objectAtIndex:row];
     }

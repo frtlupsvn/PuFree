@@ -81,8 +81,13 @@
     else if (indexPath.section == 1)
     {
         cell.textLabel.text = [listClassEcoFrArray objectAtIndex:indexPath.row];
+<<<<<<< HEAD
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
+=======
+        cell.imageView.image = [UIImage imageNamed:@"eco_logofr.png"];
+        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
+>>>>>>> FETCH_HEAD
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Français";
         cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
@@ -91,8 +96,13 @@
     else
         {
         cell.textLabel.text = [listClassEcoEnArray objectAtIndex:indexPath.row];
+<<<<<<< HEAD
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
+=======
+        cell.imageView.image = [UIImage imageNamed:@"eco_logoen.png"];
+        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
+>>>>>>> FETCH_HEAD
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Anglais";
             cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
