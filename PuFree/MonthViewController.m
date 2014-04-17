@@ -5,7 +5,6 @@
 //  Created by Mac OS X on 4/1/14.
 //  Copyright (c) 2014 Zoom. All rights reserved.
 //
-
 #import "MonthViewController.h"
 #import "CoreGUIController.h"
 @interface MonthViewController ()
@@ -131,7 +130,7 @@
 -(NSString*)getIDClassFromJson:(NSString*)_codeClass
 {
     NSString *idclass;
-    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/group_list.php"];
+    NSString *url = [NSString stringWithFormat:@"http://mobi.pufhcm.edu.vn/group_list.php"];
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
                         [NSURL URLWithString:url]];
     NSError *error;
@@ -164,7 +163,7 @@
     arrayDayInfo = [[NSMutableArray alloc]init];
     arrayDate   = [[NSMutableArray alloc]init];
     MyDayInfo *dayInfoModel = [[MyDayInfo alloc]init];
-    NSString *url = [NSString stringWithFormat:@"http://binhchonmytam.com/timetable/month.php?month=%d&year=%d&idgroup=%@",_monthPicked,_yearPicked,[self getIDClassFromJson:codeClass]];
+    NSString *url = [NSString stringWithFormat:@"http://mobi.pufhcm.edu.vn/month.php?month=%d&year=%d&idgroup=%@",_monthPicked,_yearPicked,[self getIDClassFromJson:codeClass]];
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL:
                               [NSURL URLWithString:url]];
     

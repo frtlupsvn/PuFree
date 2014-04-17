@@ -73,29 +73,29 @@
     {
         cell.textLabel.text = [listClassInfoArray objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"it_logo.png"];
-        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Informatique";
-        cell.detailTextLabel.font = [UIFont fontWithName:@"TrebuchetMS-Italic" size:10.0];
+        cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
     }
     else if (indexPath.section == 1)
     {
         cell.textLabel.text = [listClassEcoFrArray objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
-        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Français";
-        cell.detailTextLabel.font = [UIFont fontWithName:@"TrebuchetMS-Italic" size:10.0];
+        cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
 
     }
     else
         {
         cell.textLabel.text = [listClassEcoEnArray objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
-        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Anglais";
-            cell.detailTextLabel.font = [UIFont fontWithName:@"TrebuchetMS-Italic" size:10.0];
+            cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
 
             
         }
