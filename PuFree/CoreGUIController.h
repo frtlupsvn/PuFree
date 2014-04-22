@@ -19,6 +19,7 @@
     PickDateViewController *pickDateView;
     UINavigationController *navigation;
     NSString* codeClass;
+    NSArray *idlistclass;
     int  monthPicked;
     int  yearPicked;
 }
@@ -27,4 +28,6 @@
 -(void)ShowListClass;
 -(void)PickClass:(NSString*)_codeClass;
 -(void)DatePicked:(int)_month year:(int)_year codeClass:(NSString*)_codeClass;
+-(void)listClassFromJson;
+-(NSString*)getIDClassFromJson:(NSString*)_codeClass;
 @end

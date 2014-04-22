@@ -84,7 +84,6 @@
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
         cell.imageView.image = [UIImage imageNamed:@"eco_logofr.png"];
-        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Français";
         cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];
@@ -96,7 +95,6 @@
         cell.imageView.image = [UIImage imageNamed:@"eco_logo.png"];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
         cell.imageView.image = [UIImage imageNamed:@"eco_logoen.png"];
-        cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:18.0];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = @"Licence Economique Anglais";
             cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.0];

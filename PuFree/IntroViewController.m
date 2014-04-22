@@ -17,7 +17,7 @@
 -(id)initWithCoreGUI:(CoreGUIController*)_coreGUI{
     self = [super init];
     coreGUI = _coreGUI;
-    self.view.backgroundColor = [UIColor colorWithRed:(22/255.0) green:(160/255.0) blue:(133/255.0) alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:(59/255.0) green:(89/255.0) blue:(152/255.0) alpha:1.0];
     return self;
 }
 - (void)btnpressed:(id)sender{
@@ -26,8 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        UIImageView *logohusat = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo2.png"]];
-    logohusat.frame = CGRectMake(0,self.view.frame.size.height/4, self.view.frame.size.width, 160);
+    //UIImageView *logohusat = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo2.png"]];
+    //logohusat.frame = CGRectMake(0,self.view.frame.size.height/4, self.view.frame.size.width, 160);
     //[self.view addSubview:logohusat] ;
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];

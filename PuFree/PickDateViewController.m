@@ -39,13 +39,13 @@
     //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
     //self.navigationItem.rightBarButtonItem = TodayButton;
     //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc] initWithTitle:@"Now" style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
-    UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
-    self.navigationItem.rightBarButtonItem = TodayButton;
+    //UIBarButtonItem *TodayButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"now.png"] style:UIBarButtonItemStylePlain target:self action:@selector(PickerViewJumpToRow:)];
+    //self.navigationItem.rightBarButtonItem = TodayButton;
     [self getToday];
     // Add Button go to Calendar
     UIButton * showMonthView = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     showMonthView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 50);
-    [showMonthView setTitle:@"Show A Timme Table" forState:UIControlStateNormal];
+    [showMonthView setTitle:@"Continue" forState:UIControlStateNormal];
     [self.view addSubview:showMonthView];
     [showMonthView addTarget:self action:@selector(ShowMonthViewButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -142,14 +142,13 @@
     
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor blackColor];
+    [label setTextAlignment:NSTextAlignmentCenter];
     label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
-    label.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
     
     if(component == 0)
     {
         if(row == 0)
             label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
-            label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
         
         label.text = [arrayMonth objectAtIndex:row];
     }
@@ -158,10 +157,6 @@
         if(row == 0)
 
             label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
-
-            label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
-
-        
         label.text = [arrayYear objectAtIndex:row];
     }
     else{

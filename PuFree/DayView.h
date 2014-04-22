@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MyDayInfo.h"
 @interface DayView : UIView {
+    UILabel *day;
     UILabel *dayOfWeek;
     
     UILabel *CourseNameAM;
@@ -22,8 +23,8 @@
     UILabel *NoDayPM;
     
 }
--(id)initWithDayInfo:(int)_day dayOfWeek:(NSString*)_dayOfWeek sunday:(BOOL)_sunday;
+-(id)initWithDayInfo:(int)_day dayOfWeek:(NSString*)_dayOfWeek sunday:(BOOL)_sunday isToday:(BOOL)_today;
 -(void)loadDayInfo:(MyDayInfo*)_DayInfo;
--(void)loadDayInfoAM:(MyDayInfo*)_DayInfo;
--(void)loadDayInfoPM:(MyDayInfo*)_DayInfo;
+@property (nonatomic,retain) UILabel *day;
+@property (nonatomic,retain) UILabel *dayOfWeek;
 @end

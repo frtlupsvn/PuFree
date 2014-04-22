@@ -24,6 +24,7 @@
     int height;
     
     NSDate *today;
+    
     int _dayCurrent;
     int _monthCurrent;
     int _yearCurrent;

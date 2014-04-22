@@ -17,10 +17,11 @@
     //
     coreGUI =[[CoreGUIController alloc]initCoreGUIController:self.window];
     [coreGUI StartProgram];
-//[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(22/255.0) green:(160/255.0) blue:(133/255.0) alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(59/255.0) green:(89/255.0) blue:(152/255.0) alpha:1.0]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0], NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     return YES;
 }
